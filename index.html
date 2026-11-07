@@ -347,9 +347,6 @@
       const p = audio.play();                 // 클릭 안에서 바로 호출
       start.disabled = true;
       msg1.textContent = '';
-      eyes.muted = true;                      // 클릭 안에서 잠깐 재생했다 멈춰 두면 나중에 자동 재생이 막히지 않음
-      const pr = eyes.play();
-      if (pr && pr.then) pr.then(() => { eyes.pause(); eyes.currentTime = 0; eyes.muted = false; }).catch(() => { eyes.muted = false; });
       video.preload = 'auto';                 // 영상도 미리 받기
       const fail = () => {
         state = 'intro'; waveStop();
